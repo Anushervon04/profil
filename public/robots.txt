@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anushervon-ismatov.dev/sitemap.xml

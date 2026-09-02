@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 255 255 255;
+    --bg-elev: 247 247 248;
+    --fg: 15 15 18;
+    --fg-muted: 92 92 102;
+    --border: 216 216 220;
+    --card: 255 255 255;
+    --accent: 28 130 245;
+  }
+
+  .dark {
+    --bg: 8 8 10;
+    --bg-elev: 15 15 18;
+    --fg: 238 238 240;
+    --fg-muted: 132 132 142;
+    --border: 42 42 48;
+    --card: 26 26 31;
+    --accent: 89 192 255;
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.25);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--border));
+    border-radius: 9999px;
+    border: 2px solid rgb(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--fg-muted));
+  }
+
+  /* Focus visible */
+  *:focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .text-muted {
+    color: rgb(var(--fg-muted));
+  }
+
+  .text-fg {
+    color: rgb(var(--fg));
+  }
+
+  .bg-base {
+    background-color: rgb(var(--bg));
+  }
+
+  .bg-elev {
+    background-color: rgb(var(--bg-elev));
+  }
+
+  .bg-card {
+    background-color: rgb(var(--card));
+  }
+
+  .border-base {
+    border-color: rgb(var(--border));
+  }
+
+  .glass {
+    background-color: rgb(var(--bg) / 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      rgb(var(--accent)),
+      rgb(var(--accent) / 0.7)
+    );
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(
+      rgb(var(--border)) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Anushervon Ismatov — Full-Stack Web Developer</title>
+    <meta
+      name="description"
+      content="Anushervon Ismatov — Full-Stack Web Developer specializing in modern web applications, scalable backend systems, and high-quality user interfaces. React, TypeScript, Next.js, Django, FastAPI, PostgreSQL."
+    />
+    <meta name="author" content="Anushervon Ismatov" />
+    <meta
+      name="keywords"
+      content="Anushervon Ismatov, Full-Stack Developer, Web Developer, React, TypeScript, Next.js, Django, FastAPI, PostgreSQL, Supabase, Software Engineer"
+    />
+    <link rel="canonical" href="https://anushervon-ismatov.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Anushervon Ismatov — Full-Stack Web Developer" />
+    <meta
+      property="og:description"
+      content="Full-Stack Web Developer specializing in modern web applications, scalable backend systems, and high-quality user interfaces."
+    />
+    <meta property="og:url" content="https://anushervon-ismatov.dev/" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anushervon Ismatov — Full-Stack Web Developer" />
+    <meta
+      name="twitter:description"
+      content="Full-Stack Web Developer specializing in modern web applications, scalable backend systems, and high-quality user interfaces."
+    />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme bootstrap: avoid FOUC -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = stored ? stored === 'dark' : true;
+          document.documentElement.classList.toggle('dark', isDark);
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
